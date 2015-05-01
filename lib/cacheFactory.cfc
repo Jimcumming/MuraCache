@@ -15,7 +15,7 @@ component extends="mura.Factory" output="false"
 {
 	
 	public any function init(){
-		if (server.coldfusion.productname eq "Railo"){
+		if ( ArrayFindNoCase( ['Railo','Lucee'], server.coldfusion.productname ) ){
 			variables.collection=new cache.cacheRailo(argumentCollection=arguments);
 		} else {
 			variables.collection=new cache.cacheAdobe(argumentCollection=arguments);
